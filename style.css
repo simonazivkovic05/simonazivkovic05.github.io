@@ -1,0 +1,85 @@
+:root {
+        --primary: #000043;
+        --primary-tint: #414189;
+        --primary-shade: #000029;
+        
+        --accent: #FFD700;
+        --accent-tint: #FFE975;
+        --accent-shade: #D1B313;
+        
+        --muted: #C3D6D6;
+        --muted-tint: #DADDED;
+        --muted-shade: #A9A4C4;
+        
+        --dark: #030323;
+        --light: #F5F5F7;
+
+  /* COMMON TEXT/STATE COLOURS */
+        --text: var(--dark);
+        --text-inverse: var(--light);
+        --link: var(--primary);
+        --link-hover: var(--accent);
+        --link-active: var(--accent-shade);
+
+  /* SHADOWS */
+        --shadow-sm: 0 0.1rem 0.2rem rgba(3, 3, 35, 0.18);
+        --shadow-md: 0 0.35rem 0.9rem rgba(3, 3, 35, 0.22);
+
+  /* TYPOGRAPHY */
+        --font-heading: "Poppins", Arial, sans-serif;
+        --font-body: "Roboto", Arial, sans-serif;
+
+        --text-base: 16px;
+        --text-sm: 14px;
+
+        --h1: 36px; /* Page title */
+        --h2: 30px; /* Section title */
+        --h3: 24px; /* Subheading */
+
+        --weight-regular: 400;
+        --weight-medium: 500;
+        --weight-semibold: 600;
+        --weight-bold: 700;
+
+  /* SPACING (your spec: 8 / 16 / 32, plus 40 margin) */
+        --space-0: 0;
+        --space-1: 8px;   /* small */
+        --space-2: 16px;  /* medium */
+        --space-3: 32px;  /* large */
+
+        --page-margin: 40px;
+        --card-padding: 16px;
+        --section-padding: 32px;
+
+  /* OPTIONAL: header height (useful for sticky layouts) */
+        --header-height: 64px;
+
+  /* OPTIONAL: border radius */
+        --radius-sm: 6px;
+        --radius-md: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #000043;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.navbar li a {
+    display: block;
+    color: white; 
+    text-align: center; 
+    padding: 14px 16px;
+    text-decoration: none;
+}
