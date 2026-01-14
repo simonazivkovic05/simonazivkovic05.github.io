@@ -8,17 +8,91 @@
 
     <title>Mcast Website</title>
 </head>
-<body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="applications.html">Admissions</a></li>
-                <li><a href="coursecomparison.html">Courses</a></li>
-                <li><a href="contactpage.html">Contact</a></li>
-                <li><a href="prospectivestudents.html">FAQs</a></li>
-            </ul>
-        </nav>
-    </header>
 
+<body>
+
+<header class="topbar">
+
+    <input type="checkbox" id="toggle-search" class="toggle" hidden>
+    <input type="checkbox" id="toggle-menu" class="toggle" hidden>
+
+    <div class="topbar__inner">
+
+        <a href="index.html" class="brand" aria-label="Home">
+            <img src="images/mcastLogo.png" alt="MCAST logo" class="brand__logo">
+        </a>
+
+    <div class="topbar__actions">
+        <label for="toggle-search" class="icon-btn" aria-label="Open search">
+            <img src="images/searchIcon.png" alt="Search Icon" class="icon-img">
+        </label>
+
+        <label for="toggle-menu" class="icon-btn" aria-label="Open menu">
+            <img src="images/hamburgerMenu.png" alt="Menu Icon" class="icon-img">
+        </label>
+    </div>
+    </div>
+
+    <div class="search-panel">
+        <form class="searchbar" action="#" method="get">
+        <input class="searchbar__input" type="search" name="q" placeholder="SEARCH..." aria-label="Search">
+        <button class="searchbar__btn" type="submit" aria-label="Search">
+            <img src="images/searchIcon.png" alt="Search Icon" class="icon-img">
+        </button>
+        </form>
+    </div>
+
+    <aside class="menu-panel" aria-label="Site menu">
+        <nav class="menu">
+            <a href=>ABOUT</a>
+            <a href="applications.html">ADMISSIONS</a>
+            <a href="coursecomparison.html">COURSES</a>
+            <a href="contactpage.html">CONTACT</a>
+            <a href=>RESEARCH</a>
+            <a href=>SERVICES</a>
+            <a href="prospectivestudents.html">STUDENTS</a>
+            <a href=>STAFF</a>
+            <a href="prospectivestudents.html">FAQs</a>
+        </nav>
+    </aside>
+
+</header>
+
+    <main class="content">
+
+    <section class="hero">
+        <img src="images/PartTimeCoursesMCASTWebBanner.jpg" alt="Part Time Courses" class="hero__img">
+    </section>
+
+    <section class="features">
+
+        <a class="feature-card" href="coursecomparison.html">
+            <img src="[insert_pic]" alt="" class="feature-card__img">
+        <div class="feature-card__text">
+            <h3>COURSE COMPARISON</h3>
+            <p>Compare programmes side-by-side.</p>
+        </div>
+        </a>
+
+        <a class="feature-card" href="prospectivestudents.html">
+            <img src="[insert_pic]" alt="" class="feature-card__img">
+        <div class="feature-card__text">
+            <h3>STUDENTS FAQs</h3>
+            <p>Common questions answered quickly.</p>
+        </div>
+        </a>
+
+        <a class="feature-card" href="applications.html">
+            <img src="[insert_pics]" alt="" class="feature-card__img">
+        <div class="feature-card__text">
+            <h3>APPLICATION STEPS</h3>
+            <p>Follow the steps to apply.</p>
+        </div>
+        </a>
+
+    </section>
+
+    </main>
 </body>
+
 </html>
