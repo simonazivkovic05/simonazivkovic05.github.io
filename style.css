@@ -390,4 +390,228 @@ CONTACT PAGE
       }
 }
 
+/* ===== Compare Courses page ===== */
 
+.page{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 0;
+}
+
+.hero__grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1rem 0 1.25rem;
+}
+
+.hero__media{
+      margin: 0;
+      background: #ddd;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      min-height: 180px;
+}
+
+.hero__media img{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+}
+
+.filters__bar{
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      padding: 0.85rem 1rem;
+      border-radius: 1rem;
+      background: #bfbfbf;
+}
+
+.chip{
+      border: 0;
+      background: #e9e9e9;
+      padding: 0.55rem 0.9rem;
+      border-radius: 0.75rem;
+      font: inherit;
+      cursor: pointer;
+}
+
+.chip--primary{
+      background: #8e8e8e;
+      color: #fff;
+}
+
+.results{
+      margin: 0.9rem 0 2rem;
+}
+
+.results__list{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 2px solid #333;
+}
+
+.result{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+
+      padding: 0.65rem 0;
+      border-bottom: 2px solid #333;
+}
+
+.result__title{
+      color: inherit;
+      font-weight: 600;
+}
+
+.result__compare{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      user-select: none;
+      cursor: pointer;
+}
+
+.result__compare input{
+      width: 1.05rem;
+      height: 1.05rem;
+}
+
+.compare{
+      padding: 0.5rem 0 1.5rem;
+}
+
+.compare__title{
+      margin: 0.25rem 0 0.25rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.02em;
+}
+
+.compare__subtitle{
+      margin: 0 0 1rem;
+      opacity: 0.85;
+}
+
+.compare__wrap{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+}
+
+.compare__grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+}
+
+.compareCard{
+      background: #f2f2f2;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+}
+
+.compareCard__head{
+      background: #cfcfcf;
+      padding: 0.75rem 1rem;
+}
+
+.badge{
+      display: inline-block;
+      background: #e9e9e9;
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.7rem;
+      font-size: 0.8rem;
+}
+
+.compareCard__body{
+      padding: 1rem;
+}
+
+.compareCard__option{
+      margin: 0 0 0.75rem;
+      text-decoration: underline;
+      font-weight: 600;
+}
+
+.line{
+      height: 2px;
+      background: #333;
+      margin: 0.9rem 0;
+      opacity: 0.8;
+}
+
+.compareBtn{
+      border: 0;
+      background: #9a9a9a;
+      color: #111;
+      border-radius: 0.7rem;
+      padding: 0.8rem 0.75rem;
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+}
+
+.compare__cta{
+      margin: 1rem 0 0;
+      text-align: right;
+}
+
+.compare__cta a{
+      text-decoration: underline;
+}
+
+.testimonials{
+      background: #bfbfbf;
+      margin-top: 1.5rem;
+      padding: 1rem 1rem;
+}
+
+.testimonials__inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+}
+
+.testimonials__label{
+      margin: 0 0 0.35rem;
+      opacity: 0.85;
+}
+
+.testimonials__quote{
+      margin: 0;
+}
+
+.testimonials__more{
+      white-space: nowrap;
+      text-decoration: underline;
+      color: inherit;
+}
+
+@media (max-width: 850px){
+      .hero__grid{ grid-template-columns: 1fr; }
+      .compare__wrap{ grid-template-columns: 1fr; }
+      .compareBtn{
+            flex-direction: row;
+            justify-content: center;
+      }
+      .compare__grid{ grid-template-columns: 1fr; }
+      .compare__cta{ text-align: left; }
+}
