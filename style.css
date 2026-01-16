@@ -15,12 +15,6 @@
       --dark: #030323;
       --light: #F5F5F7;
 
-      --text: var(--dark);
-      --text-inverse: var(--light);
-      --link: var(--primary);
-      --link-hover: var(--accent);
-      --link-active: var(--accent-shade);
-
       --shadow-sm: 0 0.1rem 0.2rem rgba(3, 3, 35, 0.18);
       --shadow-md: 0 0.35rem 0.9rem rgba(3, 3, 35, 0.22);
 
@@ -51,7 +45,8 @@
 }
 
 body {
-      font-family: var(--font-body);
+      margin: 0;
+      font-family: var(--font-heading);
       font-size: var(--text-base);
       font-weight: var(--weight-regular);
       color: var(--dark);
@@ -192,7 +187,6 @@ body {
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
-
 #toggle-search:checked ~ .search-panel { display: block; }
 #toggle-menu:checked ~ .menu-panel { display: block; }
 
@@ -289,7 +283,7 @@ CONTACT PAGE
 }
 
 .card--soft {
-      background: rgba(0, 0, 0, 0.12); /* matches your lo-fi grey vibe */
+      background: rgba(0, 0, 0, 0.12);
 }
 
 .card--tight {
@@ -336,10 +330,6 @@ CONTACT PAGE
       font-size: 14px;
 }
 
-.field::placeholder {
-      letter-spacing: 0.6px;
-}
-
 .field--textarea {
       height: 190px;
       border-radius: 18px;
@@ -353,7 +343,7 @@ CONTACT PAGE
 
 .field--select {
       appearance: none;
-      padding-right: 44px; /* room for arrow */
+      padding-right: 44px;
 }
 
 .select-wrap__icon {
@@ -413,6 +403,7 @@ CONTACT PAGE
       height: 420px;
       background: none;
       padding: 0;
+
 }
 
 .hero__media img{
@@ -430,9 +421,9 @@ CONTACT PAGE
       justify-content: space-between;
       flex-wrap: wrap;
 
-      padding: 0.85rem 1rem;
-      border-radius: 1rem;
-      background: var(--primary);
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
 }
 
 .chip{
@@ -458,7 +449,6 @@ CONTACT PAGE
       list-style: none;
       padding: 0;
       margin: 0;
-      border-top: 2px solid #333;
 }
 
 .result{
@@ -467,7 +457,7 @@ CONTACT PAGE
       align-items: center;
       gap: 1rem;
 
-      padding: 0.65rem 0;
+      padding: 0.75rem 0;
       border-bottom: 2px solid #333;
 }
 
@@ -548,7 +538,7 @@ CONTACT PAGE
 
 .line{
       height: 2px;
-      background: #333;
+      background: #571d1d;
       margin: 0.9rem 0;
       opacity: 0.8;
 }
@@ -573,19 +563,20 @@ CONTACT PAGE
       text-align: right;
 }
 
-.compare__cta a{
-      text-decoration: underline;
-}
-
 .testimonials{
       background: var(--muted-tint);
-      margin-top: 1.5rem;
-      padding: 1rem 1rem;
+
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+
+      padding: 1rem 0;
 }
 
 .testimonials__inner{
-      max-width: 1100px;
-      margin: 0 auto;
+      width: 100%; 
+      padding: 0 3rem;
+
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
@@ -617,9 +608,20 @@ CONTACT PAGE
       .compare__cta{ text-align: left; }
 }
 
-.results__panel{
-      background: var(--muted-tint);
+.result__compare input[type="checkbox"]{
+      accent-color: var(--accent);
+}
+
+.course-search{
       border-radius: 1rem;
-      padding: 1rem 1.25rem;
-      margin-top: 0.9rem;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.12)
+}
+.course-search__header{
+      background: var(--primary);
+      padding: 0.85rem 1rem;
+}
+.course-search__body{
+      background: var(--muted-tint);
+      padding: 0.85rem 1rem;
 }
