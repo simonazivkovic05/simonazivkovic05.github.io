@@ -407,17 +407,20 @@ CONTACT PAGE
 
 .hero__media{
       margin: 0;
-      background: #ddd;
       border-radius: 0.75rem;
       overflow: hidden;
-      min-height: 180px;
+
+      height: 420px;
+      background: none;
+      padding: 0;
 }
 
 .hero__media img{
       width: 100%;
       height: 100%;
-      display: block;
       object-fit: cover;
+
+      display: block;
 }
 
 .filters__bar{
@@ -429,12 +432,13 @@ CONTACT PAGE
 
       padding: 0.85rem 1rem;
       border-radius: 1rem;
-      background: #bfbfbf;
+      background: var(--primary);
 }
 
 .chip{
       border: 0;
-      background: #e9e9e9;
+      background: var(--muted-shade);
+      color: var(--light);
       padding: 0.55rem 0.9rem;
       border-radius: 0.75rem;
       font: inherit;
@@ -442,8 +446,8 @@ CONTACT PAGE
 }
 
 .chip--primary{
-      background: #8e8e8e;
-      color: #fff;
+      background: var(--muted-tint);
+      color: var(--dark);
 }
 
 .results{
@@ -515,20 +519,19 @@ CONTACT PAGE
 }
 
 .compareCard{
-      background: #f2f2f2;
+      background: var(--muted-tint);
       border-radius: 1rem;
       overflow: hidden;
-      border: 1px solid #e0e0e0;
 }
 
 .compareCard__head{
-      background: #cfcfcf;
+      background: var(--primary);
       padding: 0.75rem 1rem;
 }
 
 .badge{
       display: inline-block;
-      background: #e9e9e9;
+      background: var(--muted-tint);
       padding: 0.35rem 0.75rem;
       border-radius: 0.7rem;
       font-size: 0.8rem;
@@ -540,7 +543,6 @@ CONTACT PAGE
 
 .compareCard__option{
       margin: 0 0 0.75rem;
-      text-decoration: underline;
       font-weight: 600;
 }
 
@@ -553,8 +555,8 @@ CONTACT PAGE
 
 .compareBtn{
       border: 0;
-      background: #9a9a9a;
-      color: #111;
+      background: var(--muted-tint);
+      color: var(--primary);
       border-radius: 0.7rem;
       padding: 0.8rem 0.75rem;
       cursor: pointer;
@@ -576,7 +578,7 @@ CONTACT PAGE
 }
 
 .testimonials{
-      background: #bfbfbf;
+      background: var(--muted-tint);
       margin-top: 1.5rem;
       padding: 1rem 1rem;
 }
@@ -601,7 +603,6 @@ CONTACT PAGE
 
 .testimonials__more{
       white-space: nowrap;
-      text-decoration: underline;
       color: inherit;
 }
 
@@ -614,4 +615,11 @@ CONTACT PAGE
       }
       .compare__grid{ grid-template-columns: 1fr; }
       .compare__cta{ text-align: left; }
+}
+
+.results__panel{
+      background: var(--muted-tint);
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      margin-top: 0.9rem;
 }
