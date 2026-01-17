@@ -388,6 +388,11 @@ CONTACT PAGE
       padding: 1.25rem 1rem 0;
 }
 
+.page{
+      max-width: var(--max-content);
+      padding: 2.5rem 2rem 0;
+}
+
 .hero__grid{
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -624,4 +629,136 @@ CONTACT PAGE
 .course-search__body{
       background: var(--muted-tint);
       padding: 0.85rem 1rem;
+}
+
+/* HOW TO APPLY PAGE */
+.section-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #f0f0f0;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+}
+
+.steps{
+      max-width: none; /* removes the narrow look */
+}
+
+.how-to-apply{
+      display: grid;
+      grid-template-columns: 1fr 320px;  /* steps left, tips right */
+      gap: 48px;
+      align-items: start;
+}
+
+.section-tag{
+      grid-column: 1 / -1; /* title spans both columns */
+}
+
+/* each row becomes one long container like lo-fi */
+.step{
+      background: var(--muted-tint);
+      border-radius: 999px;
+      padding: 10px 14px;
+
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 14px;
+      align-items: center;
+
+      margin-bottom: 14px;
+}
+
+.step__label{
+      min-width: 0; /* IMPORTANT: overrides your min-width */
+}
+
+.step__box{
+      padding: 10px 14px;
+      border-radius: 999px;
+}
+
+/* tips should not drop below */
+.tips{
+      margin-top: 0;
+      max-width: 320px;
+}
+
+/* UNIQUE PLACEHOLDER COLOURS */
+.box-a { background: #d6e4ff; }
+.box-b { background: #ffe4e1; }
+.box-c { background: #e4ffe9; }
+.box-d { background: #fff3cd; }
+.box-e { background: #ede4ff; }
+.box-f { background: #f5f5f5; }
+
+/* TIPS */
+.tips {
+      margin-top: 2rem;
+      max-width: 300px;
+}
+
+/* DOWNLOADS */
+.downloads {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      border-radius: 1rem;
+}
+
+/* IMAGES */
+.images {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 3rem;
+}
+
+.images img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+}
+
+.images{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr;
+      gap: 24px;
+      margin-top: 48px;
+      align-items: stretch;
+}
+
+.images img{
+      max-width: none;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+}
+
+.images img:nth-child(3){
+      height: 560px;
+}
+/* FAQ */
+.faq {
+      margin-top: 3rem;
+}
+
+/* ===== Images + Downloadables side-by-side (lo-fi layout) ===== */
+.media-downloads{
+      display: grid;
+      grid-template-columns: 340px 1fr; /* images big, downloads small */
+      gap: 32px;
+      align-items: start;
+      margin-top: 48px;
+}
+
+/* downloads becomes a small side card */
+.media-downloads .downloads{
+      margin-top: 0;
+      padding: 24px;
+      border-radius: 18px;
+}
+
+/* images stay as you already styled them */
+.media-downloads .images{
+      margin-top: 0;
 }
