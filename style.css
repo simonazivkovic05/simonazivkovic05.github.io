@@ -51,6 +51,9 @@
 html, body {
       margin: 0;
       padding: 0;
+
+      /* ✅ FIX: prevents any section (like 100vw tricks) from creating side overflow */
+      overflow-x: hidden;
 }
 
 body {
@@ -99,32 +102,42 @@ TOPBAR / NAV (your ribbon)
 .topbar {
       background: var(--primary);
       position: relative;
+
+      /* ✅ Extra safety: stops anything from visually pushing the header sideways */
+      overflow-x: clip;
 }
 
 .topbar__inner {
-      max-width: var(--max-content);
-      margin: 0 auto;
       height: 140px;
       padding: 0 48px;
+
+      width: 100%;
+      max-width: var(--max-content);
+      margin: 0 auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 }
 
+
 .brand {
       display: inline-flex;
-      align-items: center;
       text-decoration: none;
+      height: 100%;
+      display: flex;
+      align-items: center;
 }
 
 .brand__logo {
-      max-height: 86px;
+      height: 86px;
+      max-height: none;
       width: auto;
       object-fit: contain;
 }
 
 .topbar__actions {
+      position: relative;
       display: flex;
       gap: 14px;
 }
@@ -148,13 +161,27 @@ TOPBAR / NAV (your ribbon)
 .search-panel {
       display: none;
       background: transparent;
-      padding: 0 24px 16px;
+      padding: 0;
+
+      position: absolute;
+      top: 50%;
+      right: 72px;
+      transform: translateY(-50%);
+      z-index: 999;
+      width: min(520px, 60vw);
+}
+
+#toggle-search:checked ~ .topbar__inner .search-panel {
+      display: block;
+}
+
+#toggle-search:checked ~ .topbar__inner label[for="toggle-search"] {
+      opacity: 0;
+      pointer-events: none;
 }
 
 .searchbar {
-      max-width: var(--max-content);
-      margin: 0 auto;
-
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -543,9 +570,11 @@ TOPBAR / NAV (your ribbon)
 /* Full-width testimonials strip */
 .testimonials {
       background: var(--muted-tint);
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
+
+      /* ✅ FIX: stop 100vw overflow that changes header margins */
+      width: 100%;
+      margin: 0;
+
       padding: 1rem 0;
 }
 
@@ -670,7 +699,7 @@ TOPBAR / NAV (your ribbon)
 .faq { margin-top: 3rem; }
 
 /* =========================================
-   FAQ PAGE (the one with subnav + top questions + form)
+FAQ PAGE (the one with subnav + top questions + form)
 ========================================= */
 .subnav { margin-top: 6px; }
 
@@ -922,4 +951,9 @@ RESPONSIVE
 
       .subnav__inner { gap: 14px; }
       .linksbar__grid { grid-template-columns: 1fr; }
+}
+
+.topbar .brand__logo{
+      height: 86px !important;
+      width: auto !important;
 }
