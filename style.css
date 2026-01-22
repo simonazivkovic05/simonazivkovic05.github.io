@@ -40,7 +40,6 @@
       --section-padding: 32px;
 
       --max-content: 1320px;
-
 }
 
 *,
@@ -80,7 +79,7 @@ img {
 }
 
 /* =========================================
-   LAYOUT WRAPPERS (use these everywhere)
+LAYOUT WRAPPERS (use these everywhere)
 ========================================= */
 .container,
 .page {
@@ -95,7 +94,7 @@ img {
 }
 
 /* =========================================
-   TOPBAR / NAV (your ribbon)
+TOPBAR / NAV (your ribbon)
 ========================================= */
 .topbar {
       background: var(--primary);
@@ -105,8 +104,8 @@ img {
 .topbar__inner {
       max-width: var(--max-content);
       margin: 0 auto;
-      height: 120px;
-      padding: 0 32px;
+      height: 140px;
+      padding: 0 48px;
 
       display: flex;
       align-items: center;
@@ -120,7 +119,7 @@ img {
 }
 
 .brand__logo {
-      max-height: 74px;
+      max-height: 86px;
       width: auto;
       object-fit: contain;
 }
@@ -131,8 +130,8 @@ img {
 }
 
 .icon-btn {
-      width: 64px;
-      height: 64px;
+      width: 72px;
+      height: 72px;
       display: grid;
       place-items: center;
       cursor: pointer;
@@ -140,8 +139,8 @@ img {
 }
 
 .icon-img {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       object-fit: contain;
 }
 
@@ -890,7 +889,7 @@ img {
 .linksbar__link:hover { text-decoration: underline; }
 
 /* =========================================
-   RESPONSIVE
+RESPONSIVE
 ========================================= */
 @media (max-width: 900px) {
       .features { grid-template-columns: 1fr; gap: 40px; }
