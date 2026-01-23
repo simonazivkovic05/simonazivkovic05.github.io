@@ -311,7 +311,7 @@ HOME PAGE
 
 .hero__img {
       width: 100vw;
-      aspect-ratio: 16 / 6;
+      aspect-ratio: 12 / 4;
       object-fit: cover;
 }
 
