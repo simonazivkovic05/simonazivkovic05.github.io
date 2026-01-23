@@ -39,7 +39,7 @@
       --card-padding: 16px;
       --section-padding: 32px;
 
-      --max-content: 1320px;
+      --max-content: 1600px;
 }
 
 *,
@@ -52,7 +52,6 @@ html, body {
       margin: 0;
       padding: 0;
 
-      /* ✅ FIX: prevents any section (like 100vw tricks) from creating side overflow */
       overflow-x: hidden;
 }
 
@@ -103,7 +102,6 @@ TOPBAR / NAV (your ribbon)
       background: var(--primary);
       position: relative;
 
-      /* ✅ Extra safety: stops anything from visually pushing the header sideways */
       overflow-x: clip;
 }
 
@@ -251,7 +249,7 @@ TOPBAR / NAV (your ribbon)
 #toggle-menu:checked ~ .menu-panel { display: block; }
 
 /* =========================================
-   SHARED COMPONENTS
+SHARED COMPONENTS
 ========================================= */
 .card {
       border-radius: 18px;
@@ -305,14 +303,14 @@ TOPBAR / NAV (your ribbon)
 }
 
 /* =========================================
-   HOME PAGE
+HOME PAGE
 ========================================= */
 .hero {
-      margin-bottom: 96px;
+      margin-bottom: 48px;
 }
 
 .hero__img {
-      width: 100%;
+      width: 100vw;
       aspect-ratio: 16 / 6;
       object-fit: cover;
 }
@@ -324,6 +322,22 @@ TOPBAR / NAV (your ribbon)
       margin-top: 72px;
       align-items: stretch;
 }
+
+/* Responsive grid */
+@media (max-width: 900px) {
+      .features {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+      }
+}
+
+@media (max-width: 600px) {
+      .features {
+            grid-template-columns: 1fr;
+            gap: 24px;
+      }
+}
+
 
 .feature-card {
       text-decoration: none;
@@ -348,7 +362,7 @@ TOPBAR / NAV (your ribbon)
 
 .feature-card__img {
       width: 100%;
-      height: 420px;
+      height: clamp(180px, 28vw, 420px);
       object-fit: contain;
 }
 
@@ -359,7 +373,7 @@ TOPBAR / NAV (your ribbon)
 }
 
 /* =========================================
-   CONTACT PAGE
+CONTACT PAGE
 ========================================= */
 .contact {
       padding: 48px 0 72px;
@@ -374,7 +388,9 @@ TOPBAR / NAV (your ribbon)
 
 .contact__left {
       display: grid;
-      gap: 18px;
+      gap: 14px;
+      color: var(--muted-tint);
+      font-weight: var(--weight-semibold);
 }
 
 .contact__title {
@@ -382,7 +398,7 @@ TOPBAR / NAV (your ribbon)
       font-size: 16px;
       color: var(--primary2);
       letter-spacing: 0.5px;
-      font-weight: var(--weight-semibold);
+      font-weight: var(--weight-bold);
       margin-bottom: 14px;
 }
 
@@ -396,10 +412,11 @@ TOPBAR / NAV (your ribbon)
 .contact-form {
       display: grid;
       gap: 12px;
+      height: 510px;
 }
 
 /* =========================================
-   COMPARE COURSES PAGE
+COMPARE COURSES PAGE
 ========================================= */
 .hero__grid {
       display: grid;
@@ -539,10 +556,9 @@ TOPBAR / NAV (your ribbon)
       font-weight: 600;
 }
 
-/* NOTE: You had a hardcoded red/burgundy line; kept it but you can change anytime */
 .line {
       height: 2px;
-      background: #571d1d;
+      background: var(--dark);
       margin: 0.9rem 0;
       opacity: 0.8;
 }
@@ -567,12 +583,9 @@ TOPBAR / NAV (your ribbon)
       text-align: right;
 }
 
-/* Full-width testimonials strip */
 .testimonials {
       background: var(--muted-tint);
 
-      /* ✅ FIX: stop 100vw overflow that changes header margins */
-      width: 100%;
       margin: 0;
 
       padding: 1rem 0;
@@ -608,14 +621,18 @@ TOPBAR / NAV (your ribbon)
 }
 
 /* =========================================
-   HOW TO APPLY PAGE
+HOW TO APPLY PAGE
 ========================================= */
 .section-tag {
       display: inline-block;
       padding: 0.5rem 1rem;
-      background: #f0f0f0;
-      border-radius: 999px;
+      background: var(--primary);
+      border-radius: 20px;
       margin-bottom: 1.5rem;
+
+      grid-column: 1 / 2;
+      justify-self: left;
+      color: var(--primary2);
 }
 
 .steps { max-width: none; }
@@ -631,7 +648,7 @@ TOPBAR / NAV (your ribbon)
 
 .step {
       background: var(--muted-tint);
-      border-radius: 999px;
+      border-radius: 20px;
       padding: 10px 14px;
 
       display: grid;
@@ -646,7 +663,9 @@ TOPBAR / NAV (your ribbon)
 
 .step__box {
       padding: 10px 14px;
-      border-radius: 999px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: var(--primary2);
 }
 
 .tips {
@@ -654,7 +673,6 @@ TOPBAR / NAV (your ribbon)
       max-width: 320px;
 }
 
-/* Downloads + Images layout (your “downloadables next to images” layout helper) */
 .media-downloads {
       display: grid;
       grid-template-columns: 340px 1fr;
@@ -699,12 +717,12 @@ TOPBAR / NAV (your ribbon)
 .faq { margin-top: 3rem; }
 
 /* =========================================
-FAQ PAGE (the one with subnav + top questions + form)
+FAQ PAGE
 ========================================= */
 .subnav { margin-top: 6px; }
 
 .subnav__inner {
-      background: var(--primary-tint);
+      background: var(--primary);
       border-radius: var(--radius-lg, 18px);
       padding: 14px 18px;
 
@@ -735,7 +753,7 @@ FAQ PAGE (the one with subnav + top questions + form)
 
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 80px;
 }
 
 .search__input {
@@ -807,7 +825,7 @@ FAQ PAGE (the one with subnav + top questions + form)
 
       display: grid;
       gap: 14px;
-      font-size: 16px;
+      font-size: 25px;
 }
 .questions li { line-height: 1.4; }
 
@@ -858,12 +876,10 @@ FAQ PAGE (the one with subnav + top questions + form)
       border: none;
       border-radius: 999px;
       padding: 10px 14px;
-      background: var(--primary2);
       cursor: pointer;
       font-weight: 600;
 }
 
-/* Send icon inside textarea */
 .send-btn {
       position: absolute;
       right: 10px;
@@ -884,7 +900,6 @@ FAQ PAGE (the one with subnav + top questions + form)
 
 .send-btn:hover { background: var(--accent); }
 
-/* Useful links bar */
 .linksbar {
       background: var(--muted-tint);
       margin-top: 10px;
@@ -899,10 +914,10 @@ FAQ PAGE (the one with subnav + top questions + form)
 
 .linksbar__title {
       margin: 0 0 18px;
-      color: var(--primary2);
+      color: var(--primary);
       font-size: 28px;
       font-weight: 400;
-}
+      }
 
 .linksbar__grid {
       display: grid;
@@ -911,7 +926,7 @@ FAQ PAGE (the one with subnav + top questions + form)
 }
 
 .linksbar__link {
-      color: var(--primary2);
+      color: var(--primary);
       text-decoration: none;
       font-size: 14px;
 }
@@ -956,4 +971,13 @@ RESPONSIVE
 .topbar .brand__logo{
       height: 86px !important;
       width: auto !important;
+}
+
+.container,
+.page {
+      width: 100%;
+      max-width: var(--max-content);
+      margin-inline: auto;
+      padding-inline: clamp(16px, 4vw, 48px);
+      padding-block: clamp(24px, 4vw, 56px);
 }
